@@ -12,5 +12,14 @@ def pregunta_01():
 
     Rta/
     40
-
     """
+    import pandas as pd
+
+    ruta='files/input/tbl0.tsv'
+    df = pd.read_csv(ruta)
+
+
+    cantidad_filas = len(df)
+    return cantidad_filas
+
+pregunta_01()

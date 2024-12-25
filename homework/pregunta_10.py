@@ -20,3 +20,13 @@ def pregunta_10():
     D                   1:2:3:5:5:7
     E   1:1:2:3:3:4:5:5:5:6:7:8:8:9
     """
+    import pandas as pd
+
+    ruta='files/input/tbl0.tsv'
+    df = pd.read_csv(ruta, sep='\t')
+    result = df.groupby('c1')['c2'].apply(lambda x: ':'.join(map(str, sorted(x)))).reset_index()
+    result.set_index('c1', inplace=True)
+    result.index.name = '_c1'
+    print(result)
+    return result
+pregunta_10()

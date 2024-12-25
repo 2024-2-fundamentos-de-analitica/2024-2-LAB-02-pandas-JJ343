@@ -23,3 +23,14 @@ def pregunta_09():
     39  39  E   5  1998-01-26  1998
 
     """
+    import pandas as pd
+
+    ruta='files/input/tbl0.tsv'
+    df = pd.read_csv(ruta, sep='\t')
+    df['year'] = df['c3'].str[:4]
+    return df
+
+
+  
+
+pregunta_09()
